@@ -10,8 +10,8 @@ height = 14.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 1 )]
-frame = 0
+offset = Vector2( 11, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -10, 7 )
+position = Vector2( 0.678726, 7.33371 )
 shape = SubResource( 1 )
