@@ -1,5 +1,18 @@
-Repository for Petrichor22 Game Development Workshop.
+#Readme is used for the current code
 
-You can find all assets required for the Workshop in ./assets
+extends Node2D
 
-Each session will be pushed into ./game
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+func _on_killer_area_body_entered(body):
+	if(body.name=="Player"):
+		get_tree().reload_current_scene()
