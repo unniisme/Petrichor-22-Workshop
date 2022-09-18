@@ -7,17 +7,22 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var get_enemy_all=get_parent().get_node("all_enemies")
+	for xx in get_enemy_all.get_children():
+		var enemy_area=xx.get_node("Enemy/Area2D")
+		enemy_area.connect("body_entered", self, "enemy_player_area_entered")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func enemy_player_area_entered(body):
+	if(body.name=="Player"):
+		get_tree().change_scene("res://Actors/Interface/GUI.tscn")
+	
+	
 
 func _on_killer_area_body_entered(body):
 	if(body.name=="Player"):
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://Actors/Interface/GUI.tscn")
+		#get_tree().reload_current_scene()
 	
 
 

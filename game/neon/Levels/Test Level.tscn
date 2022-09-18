@@ -551,8 +551,13 @@ position = Vector2( 557.815, -244.686 )
 [node name="Coin3" parent="Coins" instance=ExtResource( 18 )]
 position = Vector2( 263.806, 41.8488 )
 
-[node name="path_enemy" parent="." instance=ExtResource( 19 )]
+[node name="all_enemies" type="Node2D" parent="."]
 position = Vector2( 212.24, -18.6877 )
+
+[node name="path_enemy" parent="all_enemies" instance=ExtResource( 19 )]
+
+[node name="path_enemy3" parent="all_enemies" instance=ExtResource( 19 )]
+position = Vector2( 242.013, -258.714 )
 
 [connection signal="body_entered" from="killers/killer_area" to="level_manager" method="_on_killer_area_body_entered"]
 [connection signal="body_entered" from="killers/killer_area2" to="level_manager" method="_on_killer_area_body_entered"]

@@ -19,7 +19,6 @@ func _ready():
 func _process(delta):
 	var target = patrol_points[patrol_index]
 	var dist=position.distance_to(target)
-	print(dist)
 	if dist < 1:
 		patrol_index = wrapi(patrol_index + 1, 0, patrol_points.size())
 		target = patrol_points[patrol_index]
