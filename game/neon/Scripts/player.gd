@@ -4,10 +4,21 @@ export var gravity = 400
 export var movementSpeed = 300
 export var jumpSpeed = 500
 
+var spriteOffset = 11
+
 var velocity = Vector2.ZERO
 
+var animatedSprite
+
+
+func _flip():
+	animatedSprite.flip_h = not animatedSprite.flip_h
+	animatedSprite.offset.x = -animatedSprite.offset.x
+	
+
+
 func _ready():
-	pass
+	animatedSprite = $AnimatedSprite
 	
 func _physics_process(delta):
 	
@@ -28,3 +39,17 @@ func _physics_process(delta):
 	
 	#Function to move player
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	#------------------------------------------
+	# Animations
+	if velocity.y != 0:
+		animatedSprite.play("Jump")
+	else:
+		if velocity.x == 0:
+			animatedSprite.play("idle")
+		else:
+			animatedSprite.play("run")
+	
+	# Flipping
+	if (velocity.x > 0 and animatedSprite.flip_h) or  (velocity.x < 0 and not animatedSprite.flip_h):
+		_flip()
