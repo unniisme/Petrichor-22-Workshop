@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://assets/craftpix-net-753737-free-green-zone-tileset-pixel-art/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/craftpix-net-965049-free-industrial-zone-tileset-pixel-art/Tiles.png" type="Texture" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://assets/craftpix-net-753737-free-green-zone-tileset-pixel-art/2 Background/Day/1.png" type="Texture" id=13]
 [ext_resource path="res://assets/craftpix-net-753737-free-green-zone-tileset-pixel-art/2 Background/Day/3.png" type="Texture" id=14]
 [ext_resource path="res://assets/craftpix-net-753737-free-green-zone-tileset-pixel-art/2 Background/Day/2.png" type="Texture" id=15]
+[ext_resource path="res://Actors/killer_area.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Actors/level_manager.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Actors/Coin.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -516,3 +519,30 @@ tile_set = SubResource( 42 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -655336, 0, 327684, -655335, 0, 65547, -655334, 0, 65547, -655333, 0, 65547, -655332, 0, 65547, -655331, 0, 65547, -589800, 0, 65536, -589799, 0, 65537, -589798, 0, 65538, -589797, 0, 65547, -589796, 0, 65547, -589795, 0, 65547, -524265, 0, 8, -524264, 0, 131083, -524263, 0, 3, -524262, 0, 3, -524261, 0, 65537, -524260, 0, 65537, -524259, 0, 65547, -458735, 0, 196619, -458729, 0, 262151, -458728, 0, 65543, -458727, 0, 3, -458726, 0, 3, -458725, 0, 3, -458724, 0, 3, -458723, 0, 3, -393200, 0, 8, -393199, 0, 327681, -393192, 0, 262151, -393191, 0, 65543, -393190, 0, 65542, -393189, 0, 262152, -393188, 0, 262152, -393187, 0, 262152, -327664, 0, 262151, -327663, 0, 327681, -327655, 0, 262151, -327654, 0, 262153, -262132, 0, 196618, -262127, 0, 262154, -131047, 0, 8, -131046, 0, 9, -131045, 0, 9, -131044, 0, 9, -131043, 0, 9, -65521, 0, 327690, -65520, 0, 9, -65519, 0, 11, -65514, 0, 8, -65513, 0, 9, -65512, 0, 9, -65511, 0, 131083, -65510, 0, 3, -65509, 0, 3, -65508, 0, 3, -65507, 0, 3, 11, 0, 196618, 15, 0, 65536, 16, 0, 262152, 17, 0, 262153, 22, 0, 327680, 23, 0, 3, 24, 0, 3, 25, 0, 3, 26, 0, 3, 27, 0, 3, 28, 0, 3, 29, 0, 3, 131070, 0, 0, 131071, 0, 1, 65536, 0, 1, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 262146, 65551, 0, 262154, 65558, 0, 262151, 65559, 0, 65543, 65560, 0, 3, 65561, 0, 3, 65562, 0, 3, 65563, 0, 3, 65564, 0, 3, 65565, 0, 3, 196606, 0, 327684, 196607, 0, 65547, 131072, 0, 65547, 131073, 0, 65547, 131074, 0, 65547, 131075, 0, 327685, 131079, 0, 262144, 131080, 0, 262145, 131081, 0, 262146, 131095, 0, 262151, 131096, 0, 65543, 131097, 0, 3, 131098, 0, 3, 131099, 0, 3, 131100, 0, 3, 131101, 0, 3, 262142, 0, 327684, 262143, 0, 65547, 196608, 0, 65547, 196609, 0, 65547, 196610, 0, 65547, 196611, 0, 327685, 196632, 0, 262151, 196633, 0, 262152, 196634, 0, 3, 196635, 0, 262152, 196636, 0, 65543, 196637, 0, 3, 327678, 0, 327684, 327679, 0, 65547, 262144, 0, 65547, 262145, 0, 65547, 262146, 0, 65547, 262147, 0, 65539, 262170, 0, 262154, 262172, 0, 262151, 262173, 0, 262152, 393214, 0, 327682, 393215, 0, 65538, 327680, 0, 65538, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 327681, 458750, 0, 327680, 458751, 0, 3, 393216, 0, 3, 393217, 0, 3, 393218, 0, 65542, 393219, 0, 327687, 524286, 0, 327680, 524287, 0, 3, 458752, 0, 3, 458753, 0, 3, 458754, 0, 327681, 589822, 0, 327680, 589823, 0, 3, 524288, 0, 3, 524289, 0, 3, 524290, 0, 3, 524291, 0, 11, 655358, 0, 262151, 655359, 0, 65543, 589824, 0, 3, 589825, 0, 3, 589826, 0, 3, 589827, 0, 327681, 720895, 0, 262151, 655360, 0, 262152, 655361, 0, 262152, 655362, 0, 262152, 655363, 0, 262153 )
+
+[node name="killers" type="Node2D" parent="."]
+
+[node name="killer_area" parent="killers" instance=ExtResource( 16 )]
+position = Vector2( 361.519, -71.3524 )
+scale = Vector2( 1.6, 3.24 )
+
+[node name="level_manager" parent="." instance=ExtResource( 17 )]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 18 )]
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 18 )]
+position = Vector2( 263.806, 41.8488 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 18 )]
+position = Vector2( 238.379, 58.8002 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 18 )]
+position = Vector2( 120.249, 0 )
+
+[connection signal="body_entered" from="killers/killer_area" to="level_manager" method="_on_killer_area_body_entered"]
+[connection signal="body_entered" from="Coins/Coin" to="level_manager" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coins/Coin3" to="level_manager" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coins/Coin4" to="level_manager" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coins/Coin2" to="level_manager" method="_on_Coin_body_entered"]
