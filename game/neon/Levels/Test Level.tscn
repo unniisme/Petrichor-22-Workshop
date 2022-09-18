@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://assets/craftpix-net-753737-free-green-zone-tileset-pixel-art/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/craftpix-net-965049-free-industrial-zone-tileset-pixel-art/Tiles.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Actors/killer_area.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Actors/level_manager.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Actors/Coin.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Actors/path_enemy.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -523,7 +524,15 @@ tile_data = PoolIntArray( -655336, 0, 327684, -655335, 0, 65547, -655334, 0, 655
 [node name="killers" type="Node2D" parent="."]
 
 [node name="killer_area" parent="killers" instance=ExtResource( 16 )]
-position = Vector2( 361.519, -71.3524 )
+position = Vector2( 399.512, 314.071 )
+scale = Vector2( 1.6, 3.24 )
+
+[node name="killer_area2" parent="killers" instance=ExtResource( 16 )]
+position = Vector2( 925.439, 314.071 )
+scale = Vector2( 1.6, 3.24 )
+
+[node name="killer_area3" parent="killers" instance=ExtResource( 16 )]
+position = Vector2( -38.8022, 293.844 )
 scale = Vector2( 1.6, 3.24 )
 
 [node name="level_manager" parent="." instance=ExtResource( 17 )]
@@ -531,18 +540,24 @@ scale = Vector2( 1.6, 3.24 )
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 18 )]
+position = Vector2( 130.815, 11.3137 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 18 )]
+position = Vector2( 751.815, -277.686 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 18 )]
+position = Vector2( 557.815, -244.686 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 18 )]
 position = Vector2( 263.806, 41.8488 )
 
-[node name="Coin4" parent="Coins" instance=ExtResource( 18 )]
-position = Vector2( 238.379, 58.8002 )
-
-[node name="Coin2" parent="Coins" instance=ExtResource( 18 )]
-position = Vector2( 120.249, 0 )
+[node name="path_enemy" parent="." instance=ExtResource( 19 )]
+position = Vector2( 212.24, -18.6877 )
 
 [connection signal="body_entered" from="killers/killer_area" to="level_manager" method="_on_killer_area_body_entered"]
+[connection signal="body_entered" from="killers/killer_area2" to="level_manager" method="_on_killer_area_body_entered"]
+[connection signal="body_entered" from="killers/killer_area3" to="level_manager" method="_on_killer_area_body_entered"]
 [connection signal="body_entered" from="Coins/Coin" to="level_manager" method="_on_Coin_body_entered"]
-[connection signal="body_entered" from="Coins/Coin3" to="level_manager" method="_on_Coin_body_entered"]
-[connection signal="body_entered" from="Coins/Coin4" to="level_manager" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coins/Coin2" to="level_manager" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coins/Coin4" to="level_manager" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coins/Coin3" to="level_manager" method="_on_Coin_body_entered"]
