@@ -4,14 +4,14 @@
 [ext_resource path="res://Actors/Interface/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Interface/GUI.gd" type="Script" id=3]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.215686, 0.254902, 0.592157, 1 )
 corner_radius_top_left = 26
 corner_radius_top_right = 26
 corner_radius_bottom_right = 26
 corner_radius_bottom_left = 26
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.298039, 0.113725, 0.545098, 1 )
 corner_radius_top_left = 26
 corner_radius_top_right = 26
@@ -40,7 +40,7 @@ margin_left = 85.0462
 margin_top = 437.809
 margin_right = 279.046
 margin_bottom = 503.809
-custom_styles/hover = SubResource( 5 )
+custom_styles/hover = SubResource( 1 )
 custom_colors/font_color = Color( 0.439216, 0.486275, 0.913725, 1 )
 
 [node name="Quit" parent="." instance=ExtResource( 2 )]
@@ -48,9 +48,8 @@ margin_left = 670.136
 margin_top = 433.052
 margin_right = 864.136
 margin_bottom = 499.052
-custom_styles/hover = SubResource( 4 )
+custom_styles/hover = SubResource( 2 )
 custom_colors/font_color = Color( 0.439216, 0.486275, 0.913725, 1 )
 text = "QUIT"
-
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/craftpix-net-753737-free-green-zone-tileset-pixel-art/4 Animated objects/Money.png" type="Texture" id=1]
-[ext_resource path="res://Actors/Coin.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Coin.gd" type="Script" id=2]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )

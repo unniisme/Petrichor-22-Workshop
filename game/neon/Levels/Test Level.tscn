@@ -512,7 +512,7 @@ current = true
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 41, -34 )
 gravity = 560
-movementSpeed = 170
+movementSpeed = 150
 jumpSpeed = 320
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -558,7 +558,6 @@ position = Vector2( 212.24, -18.6877 )
 
 [node name="path_enemy3" parent="all_enemies" instance=ExtResource( 19 )]
 position = Vector2( 242.013, -258.714 )
-
 [connection signal="body_entered" from="killers/killer_area" to="level_manager" method="_on_killer_area_body_entered"]
 [connection signal="body_entered" from="killers/killer_area2" to="level_manager" method="_on_killer_area_body_entered"]
 [connection signal="body_entered" from="killers/killer_area3" to="level_manager" method="_on_killer_area_body_entered"]

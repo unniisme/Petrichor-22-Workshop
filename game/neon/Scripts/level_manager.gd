@@ -1,9 +1,6 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var score=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,17 +13,17 @@ func _ready():
 func enemy_player_area_entered(body):
 	if(body.name=="Player"):
 		get_tree().change_scene("res://Actors/Interface/GUI.tscn")
+		print("Final Score: ", score)
 	
 	
 
 func _on_killer_area_body_entered(body):
 	if(body.name=="Player"):
 		get_tree().change_scene("res://Actors/Interface/GUI.tscn")
-		#get_tree().reload_current_scene()
+		print("Final Score: ", score)
 	
 
 
-var score=0
 
 func _on_Coin_body_entered(body):
 	if(body.name=="Player"):
